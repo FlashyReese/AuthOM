@@ -1,0 +1,31 @@
+name: AuthOM
+version: 1.0
+description: Authentication for Offline Mode Servers
+authors: [FlashyReese]
+api-version: 1.13
+
+main: me.wilsonhu.authom.AuthOM
+
+commands:
+  login:
+    description: Log into the server.
+    usage: /login [password]
+    permission: authom.user
+  register:
+    description: Registers user to new account
+    usage: /register [password] [password]
+    permission: authom.user
+  logout:
+    description: Logs out of the server.
+    usage: /logout
+    permission: authom.user
+  changepassword:
+    description: Changes your old password to a new password
+    usage: /changepassword [old password] [new password] [new password]
+    permission: authom.user
+  forcechangepassword:
+    description: Forces new password on to account
+    usage: /forcechangepassword [user] [new password] [new password]
+    permission: authom.changepwd
+    permission-message: You don't have the authom.updatepwd permission.
+    default: op

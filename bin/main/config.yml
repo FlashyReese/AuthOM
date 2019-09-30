@@ -1,0 +1,19 @@
+Messages:
+   LoginSyntax: 'Please login using /login [password]'
+   LoginAlready: 'Already logged in'
+   LoginSuccess: 'Logged in successfully'
+   LoginFail: 'Invalid Credentials, please try again'
+   RegisterSyntax: 'Please register using /register [password] [password]'
+   RegisterationPassword: 'Passwords did not match'
+   RegisterationAlready: 'Account already registered'
+   RegisterationSuccessful: 'Successfully registered'
+   LogoutNotLogin: 'You have not logged in yet'
+   LogoutSuccessful: 'Successfully logged out'
+   ChangePasswordSyntax: 'Please change password using /changepassword [old password] [new password] [new password]'
+   ChangePassword1: 'Old password did not match'
+   ChangePassword2: 'New passwords did not match'
+   ChangePasswordSuccess: 'Password successfully changed'
+   AutoLogin: 'Automatically logged in using your IP, remember to logout if this is not your computer'
+Settings:
+   AutoLogin: true
+   EncryptionMethod: 'SHA-512'
