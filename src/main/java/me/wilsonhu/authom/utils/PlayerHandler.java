@@ -59,6 +59,7 @@ public class PlayerHandler {
 			if (account.getPassword().equals(hash(getAuthOM().getConfig().getString("Settings.EncryptionMethod"), password))) {
 				if (account.getIp() == null || !account.getIp().equals(ip)) {
 					account.setIp(ip);
+					new JsonManager().writeJson(new File("plugins/AuthOM"), "users", this.getAccounts());
 				}
 				p.sendMessage(getAuthOM().getConfig().getString("Messages.LoginSuccess"));
 				removeEffects(p);

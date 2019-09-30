@@ -32,7 +32,7 @@ public class EventListener implements Listener{
 	public void onJoin(PlayerJoinEvent e) {
 		Player p = e.getPlayer();
 		if(getAuthOM().getConfig().getBoolean("Settings.AutoLogin")) {
-			if(getAuthOM().getPlayerHandler().isPlayer(p)) {
+			if(getAuthOM().getPlayerHandler().isRegistered(p.getName())) {
 				Account a = getAuthOM().getPlayerHandler().getAccount(p.getName());
 				if(a.getIp() != null) {
 					if(a.getIp().equalsIgnoreCase(p.getAddress().getHostName())) {
