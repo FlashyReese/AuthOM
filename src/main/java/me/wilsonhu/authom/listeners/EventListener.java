@@ -7,6 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
@@ -75,6 +76,18 @@ public class EventListener implements Listener{
 			}
 			if(e.getDamager() instanceof Player) {
 				Player p = (Player) e.getDamager();
+				if(getAuthOM().getPlayerHandler().isPlayer(p)) {
+					e.setCancelled(true);
+				}
+			}
+		}
+	}
+	
+	@EventHandler
+	public void onDamage(EntityDamageEvent e) {
+		if(e != null) {
+			if(e.getEntity() instanceof Player) {
+				Player p = (Player) e.getEntity();
 				if(getAuthOM().getPlayerHandler().isPlayer(p)) {
 					e.setCancelled(true);
 				}
