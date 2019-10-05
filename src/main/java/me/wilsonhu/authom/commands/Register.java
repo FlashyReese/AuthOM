@@ -19,7 +19,7 @@ public class Register extends Command{
 			p.sendMessage(authom.getConfig().getString("Messages.RegisterationAlready"));
 			return;
 		}
-		if (args.length == 0 && (args.length != 1 || args.length < 2)) {
+		if (args.length > 2 || args.length < 2) {
 			p.sendMessage(this.getSyntax());
 		}
 		if (args.length == 2) {

@@ -31,7 +31,11 @@ public class AuthOM extends JavaPlugin implements Listener {
 		for(Player p : Bukkit.getOnlinePlayers()) {
 			this.getPlayerHandler().addPlayer(p);
 			this.getPlayerHandler().addEffects(p);
-			p.sendMessage(getConfig().getString("Messages.LoginSyntax"));
+			if(this.getPlayerHandler().isRegistered(p.getName())) {
+				p.sendMessage(getConfig().getString("Messages.LoginSyntax"));
+			}else {
+				p.sendMessage(getConfig().getString("Messages.RegisterSyntax"));
+			}
 		}
 		getServer().getPluginManager().registerEvents(new EventListener(this), this);
 		if (!new File("plugins/AuthOM/users.json").exists()) {

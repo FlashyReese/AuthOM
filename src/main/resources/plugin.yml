@@ -1,5 +1,5 @@
 name: AuthOM
-version: 1.0
+version: 1.1
 description: Authentication for Offline Mode Servers
 authors: [FlashyReese]
 api-version: 1.13
@@ -22,6 +22,10 @@ commands:
   changepassword:
     description: Changes your old password to a new password
     usage: /changepassword [old password] [new password] [new password]
+    permission: authom.user
+  unregister:
+    description: Changes your old password to a new password
+    usage: /unregister [user] [password] [password]
     permission: authom.user
   forcechangepassword:
     description: Forces new password on to account

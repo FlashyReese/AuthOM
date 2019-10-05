@@ -14,6 +14,8 @@ Messages:
    ChangePassword2: 'New passwords did not match'
    ChangePasswordSuccess: 'Password successfully changed'
    AutoLogin: 'Automatically logged in using your IP, remember to logout if this is not your computer'
+   UnregisterSyntax: 'Please unregister using /unregister [username] [password] [password]'
+   UnregisterSuccessful: 'Successfully unregistered account'
 Settings:
    AutoLogin: true
    EncryptionMethod: 'SHA-512'

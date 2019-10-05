@@ -52,6 +52,19 @@ public class PlayerHandler {
 		p.sendMessage(getAuthOM().getConfig().getString("Messages.RegisterationSuccessful"));
 		new JsonManager().writeJson(new File("plugins/AuthOM"), "users", this.getAccounts());
 	}
+	
+	public void unregisterAccount(Player p, String password) {
+		if (isRegistered(p.getName())) {
+			Account a = getAccount(p.getName());
+			if(a.getPassword().equals(hash(getAuthOM().getConfig().getString("Settings.EncryptionMethod"), password))) {
+				getAccounts().remove(a);
+				p.sendMessage(getAuthOM().getConfig().getString("Messages.UnregisterSuccessful"));
+				new JsonManager().writeJson(new File("plugins/AuthOM"), "users", this.getAccounts());
+			}
+		}else {
+			p.sendMessage(getAuthOM().getConfig().getString("Messages.RegisterSyntax"));
+		}
+	}
 
 	public boolean login(Player p, String password, String ip) {
 		if (isRegistered(p.getName())) {
@@ -114,7 +127,7 @@ public class PlayerHandler {
 		}else if(method.equalsIgnoreCase("sha-512")) {
 			try {
 		        MessageDigest md = MessageDigest.getInstance("SHA-512");
-		        md.update(key.getBytes(StandardCharsets.UTF_8));
+		        //md.update(key.getBytes(StandardCharsets.UTF_8));
 		        byte[] bytes = md.digest(key.getBytes(StandardCharsets.UTF_8));
 		        StringBuilder sb = new StringBuilder();
 		        for(int i=0; i< bytes.length ;i++){

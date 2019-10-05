@@ -28,7 +28,7 @@ dependencies {
     implementation 'com.google.guava:guava:28.0-jre'
     implementation 'org.spigotmc:spigot-api:1.14.4-R0.1-SNAPSHOT'
     implementation 'commons-codec:commons-codec:1.13'
-
+	implementation 'com.h2database:h2:1.4.199'
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }

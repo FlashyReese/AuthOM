@@ -22,6 +22,7 @@ public class CommandManager {
 		this.getCommands().add(new Login(this.getAuthOM()));
 		this.getCommands().add(new Logout());
 		this.getCommands().add(new Register(this.getAuthOM()));
+		this.getCommands().add(new Unregister(this.getAuthOM()));
 	}
 
 	
